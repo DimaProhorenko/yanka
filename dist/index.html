@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Yanka</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.2.0/swiper-bundle.css"
+      integrity="sha512-Lc4aT4sbiVWDTSgqn3lf5kwKECm7rU45AReUS9WI2k4yRPSKtS+kJ9aV1jrxDUIyetNFRYZ3U2gR6WWbtWbIfA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <style>
+      /* .row > * {
+        border: 1px solid red;
+      }
+
+      .row {
+        border: 3px solid pink;
+      } */
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__top">
+        <div class="wrapper">
+          <div class="header__top-wrapper row ai-center jc-center">
+            <div class="col-xs-12 col-lg-2">
+              <p class="header__call">
+                Call us: <a href="+380932110492">+380932110492</a>
+              </p>
+            </div>
+            <div class="col-xs-12 col-lg-7">
+              <div class="swiper header__top-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <p>
+                      <strong>50% off</strong> all new collection.
+                      <a href="./shop.html" class="clr-primary underline"
+                        >Discover now!</a
+                      >
+                    </p>
+                  </div>
+                  <div class="swiper-slide">
+                    <p>
+                      <strong>Free 2-days</strong> standart shipping on orders
+                      $255+.
+                      <a href="./shop.html" class="clr-primary underline"
+                        >More details</a
+                      >
+                    </p>
+                  </div>
+                  <div class="swiper-slide">
+                    <p>
+                      <strong>Take 30% off</strong> when you spend $99 or more
+                      with code: "Yanka".
+                      <a href="./shop.html" class="clr-primary underline"
+                        >More details</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col hide-mobile">
+              <ul class="sm">
+                <li class="sm__li">
+                  <a href="#" class="sm__link">Facebook</a>
+                </li>
+                <li class="sm__li">
+                  <a href="#" class="sm__link">Twitter</a>
+                </li>
+                <li class="sm__li">
+                  <a href="#" class="sm__link">Instagram</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile header -->
+      <div class="header__mobile hide-laptop">
+        <div class="wrapper d-flex ai-center jc-sb relative">
+          <div class="form header__mobile-form">
+            <div class="form__group d-flex">
+              <input
+                type="text"
+                class="form__control"
+                aria-label="Enter search query"
+                placeholder="Search products"
+              />
+              <button type="submit" aria-label="search button">
+                <i class="fa-solid fa-search" aria-hidden="true"></i>
+              </button>
+              <button
+                type="submit"
+                aria-label="search button"
+                class="close-search"
+              >
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <div class="header__mobile-left">
+            <button
+              class="burger"
+              aria-expanded="false"
+              aria-label="toggle navigation menu"
+            >
+              <span class="burger__line burger__line--top"></span>
+              <span class="burger__line burger__line--mid"></span>
+              <span class="burger__line burger__line--bot"></span>
+            </button>
+          </div>
+          <div class="header__mobile-logo text-align-center">
+            <a href="#" class="logo" aria-label="Home page">Yanka</a>
+          </div>
+          <div class="header__mobile-right d-flex">
+            <button class="header__btn open-search">
+              <i class="fa-solid fa-search"></i>
+            </button>
+            <button class="header__btn toggle-cart">
+              <i class="fa-solid fa-shopping-basket"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__desktop hide-mobile">
+        <div class="wrapper">
+          <div class="row ai-center jc-sb">
+            <div class="col">
+              <a href="/" class="logo logo--xl" aria-label="Yanka homepage"
+                >Yanka</a
+              >
+            </div>
+            <div class="col-xs-4">
+              <form action="" class="header__desktop-form">
+                <div class="form__group form__group--border d-flex">
+                  <input
+                    type="text"
+                    class="form__control form__control--no-border"
+                    required
+                    placeholder="Search products..."
+                  />
+                  <button type="submit" aria-label="Search button">
+                    <i class="fa-solid fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="col d-flex">
+              <button class="header__btn" aria-label="toggle shopping cart">
+                <i class="fa-solid fa-shopping-basket"></i>
+              </button>
+              <span>Lang</span>
+              <span>USD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.2.0/swiper-bundle.min.js"
+      integrity="sha512-KBCt3sdFOcFtYTgEfE3uJckVpvPr1w8HPugyPgHFE/4iJOwhwj6eSaF27bDJTHRX2jyAFOgV3Ve9vOD97rbjrg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+@use './functions' as f;
+
+// Colors
+$clr-primary: #48cab2;
+$clr-body-bg: #fff;
+$clr-text: #333;
+$clr-text2: #888;
+$clr-text3: #fff;
+
+
+$ff-regular: 'Poppins';
+
+
+
+$columns: 12;
+$gutter: 2em;
+$max-width: 1220px;
+
+$screen-xs-max: 360px;
+$screen-sm-max: 480px;
+$screen-md-max: 728px;
+$screen-lg-max: 1024px;
+$screen-xl-max: 1600px;
+
+$xs: 0;
+$sm: $screen-sm-max;
+$md: $screen-md-max;
+$lg: $screen-lg-max;
+$xl: $screen-lg-max;
+
+
+$media-breakpoints: (
+    xs: $xs,
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xl: $xl
+);
+
+$gutters: (
+    0: 0,
+    1: 1em,
+    2: 2em,
+    3: 3em
+);
+
+$max-width: f.toRem(1220);
+$page-padding: map-get($map: $gutters, $key: 1);
+
+//bp
+$bp-phone: f.toRem($sm);
+$bp-tablet: f.toRem($md);
+$bp-desktop: f.toRem($lg);
+
+// Transitions
+$duration: 300ms;
+$timing: ease-in-out;
+
+// Burger
+$clr-burger-line: #000;
+$burger-size: f.toRem(30);
+$burger-line-height: 3px;
+$burger-line-gap: $burger-line-height;
+
+// Form
+
+// Form group
+$form-group-mb: 1em;
+$form-group-border: 1px solid $clr-text2;
+
+// Form control
+$input-padding-x: f.toRem(10);
+$input-padding-y: f.toRem(10);
+$input-bg: transparent;
+$input-border: 2px solid #cacaca;
+$input-fz: 1rem;
+$input-text-color: #000;
+$input-border-radius: 8px;
+
+$input-focus-border-color: $clr-primary;
+$input-focus-bg: transparent;
+$input-focus-color: inherit;
+
+// Form label
+$label-fz: 1rem;
+$label-color: #000;
+$label-mb: .5em;

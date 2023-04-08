@@ -1,0 +1,10 @@
+@use '../abstracts/' as abs;
+
+.logo {
+    font-size: abs.toRem(25);
+    font-weight: 700;
+
+    &--xl {
+        font-size: abs.toRem(40);
+    }
+}

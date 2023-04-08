@@ -1,0 +1,6 @@
+@use '../abstracts/' as abs;
+
+.sm {
+    @include abs.flex;
+    gap: .5em;
+}

@@ -1,0 +1,53 @@
+@use '../abstracts/' as abs;
+
+.form {
+
+
+    &__group {
+
+        &--border {
+            padding-inline: .5em;
+            border: abs.$form-group-border;
+        }
+    }
+
+    &__label {
+        display: block;
+        font-size: abs.$label-fz;
+        color: abs.$label-color;
+        margin-block-end: abs.$label-mb;
+    }
+
+    &__control {
+        display: block;
+        width: 100%;
+        padding-block: abs.$input-padding-y;
+        padding-inline: abs.$input-padding-x;
+        cursor: pointer;
+        appearance: none;
+        font-size: abs.$input-fz;
+        color: abs.$input-text-color;
+        border: abs.$input-border;
+        border-radius: abs.$input-border-radius;
+        background-color: abs.$input-bg;
+        transition-property: background-color, border-color, color;
+        transition-duration: abs.$duration;
+
+        &--no-border {
+            border: none;
+        }
+
+        &:focus,
+        &:hover {
+            color: abs.$input-focus-color;
+            background-color: abs.$input-focus-bg;
+            border-color: abs.$input-focus-border-color;
+            outline: none;
+        }
+
+        &::placeholder {
+            color: abs.$input-text-color;
+        }
+
+    }
+}
