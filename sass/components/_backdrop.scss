@@ -1,0 +1,16 @@
+@use '../abstracts/' as abs;
+
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 500;
+    opacity: 0;
+    pointer-events: none;
+    @include abs.transition(opacity);
+
+    &.active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+}

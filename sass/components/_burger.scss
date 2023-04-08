@@ -1,11 +1,5 @@
 @use '../abstracts/' as abs;
 
-// Structure
-// <button class="burger" aria-expanded="false" aria-label="Toggle Navigation">
-//     <span class="burger__line burger__line--top"></span>
-//     <span class="burger__line burger__line--mid"></span>
-//     <span class="burger__line burger__line--bot"></span>
-// </button>
 
 .burger {
     display: block;
@@ -17,44 +11,14 @@
         animation: burger-hover-scale .3s ease-in 1;
     }
 
-    &.opened {
-        .burger__line {
-
-            &--top,
-            &--bot {
-                transition: translate abs.$duration abs.$timing, rotate abs.$duration abs.$timing abs.$duration;
-            }
-
-            &--top {
-                rotate: 45deg;
-                translate: 0 calc(abs.$burger-line-height + abs.$burger-line-gap);
-            }
-
-            &--bot {
-                rotate: -45deg;
-                translate: 0 calc((abs.$burger-line-height + abs.$burger-line-gap) * -1);
-            }
-            &--mid {
-                opacity: 0;
-                transition: opacity abs.$duration abs.$timing;
-            }
-        }
-    }
 
     &__line {
         width: 80%;
         height: abs.$burger-line-height;
         background-color: abs.$clr-burger-line;
-        transition: rotate abs.$duration abs.$timing;
-
-        &--top,
-        &--bot {
-            transition: translate abs.$duration abs.$timing abs.$duration, rotate abs.$duration abs.$timing;
-        }
 
         &--mid {
             margin-block:  abs.$burger-line-gap;
-            transition: opacity abs.$duration abs.$timing abs.$duration;
         }
     }
 

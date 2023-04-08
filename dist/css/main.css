@@ -504,33 +504,13 @@ button {
 .burger:hover {
   animation: burger-hover-scale 0.3s ease-in 1;
 }
-.burger.opened .burger__line--top, .burger.opened .burger__line--bot {
-  transition: translate 300ms ease-in-out, rotate 300ms ease-in-out 300ms;
-}
-.burger.opened .burger__line--top {
-  rotate: 45deg;
-  translate: 0 6px;
-}
-.burger.opened .burger__line--bot {
-  rotate: -45deg;
-  translate: 0 -6px;
-}
-.burger.opened .burger__line--mid {
-  opacity: 0;
-  transition: opacity 300ms ease-in-out;
-}
 .burger__line {
   width: 80%;
   height: 3px;
   background-color: #000;
-  transition: rotate 300ms ease-in-out;
-}
-.burger__line--top, .burger__line--bot {
-  transition: translate 300ms ease-in-out 300ms, rotate 300ms ease-in-out;
 }
 .burger__line--mid {
   margin-block: 3px;
-  transition: opacity 300ms ease-in-out 300ms;
 }
 @keyframes burger-hover-scale {
   0%, 100% {
@@ -590,6 +570,52 @@ button {
 }
 .logo--xl {
   font-size: 2.5rem;
+}
+
+.mn {
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+  max-width: 19.6875rem;
+  min-height: 100vh;
+  padding: 2em;
+  z-index: 1000;
+  translate: -100% 0;
+  transition: translate 300ms ease-in-out;
+}
+.mn.opened {
+  translate: 0;
+}
+.mn__close-btn {
+  font-size: 1.8rem;
+}
+.mn__next-level {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+.mn__next-level i {
+  color: #888;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in-out;
+}
+.backdrop.active {
+  opacity: 1;
+  pointer-events: initial;
 }
 
 .header__top {

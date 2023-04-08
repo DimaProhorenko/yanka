@@ -46,6 +46,29 @@
     </style>
   </head>
   <body>
+    <div class="backdrop"></div>
+
+    <!-- Mobile nav -->
+    <nav class="mn">
+      <ul class="mn__panels">
+        <li class="mn__panel mn__close">
+          <button
+            class="mn__close-btn"
+            aria-label="close navigation menu"
+            aria-expanded="true"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </li>
+        <li class="mn__panel">
+          <a href="#" data-target="#mn-categories" class="mn__next-level">
+            Categories
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
     <header class="header">
       <div class="header__top">
         <div class="wrapper">
