@@ -7,7 +7,7 @@
     background-color: abs.$clr-body-bg;
     width: 100%;
     max-width: abs.toRem(315);
-    min-height: 100vh;
+    height: 100vh;
     padding: 2em;
     z-index: 1000;
     translate: -100% 0;
@@ -20,9 +20,10 @@
     }
 
     &__panels {
-
+        height: 100%;
         &-container {
             position: relative;
+            height: 100%;
         }
         
 
@@ -32,8 +33,7 @@
         }
 
         &--hidden {
-            opacity: 0;
-            translate: 100% 0;
+            translate: calc(100% + 4em) 0;
             transition: translate abs.$duration abs.$timing;
             pointer-events: none;
             position: absolute;
@@ -42,10 +42,8 @@
         }
 
         &--current {
-            opacity: 1;
             translate: 0;
             pointer-events: initial;
-            z-index: 3;
         }
 
         &--prev {
@@ -53,9 +51,27 @@
         }
     }
 
+    &__panel {
+        &:not(:last-child) {
+            margin-block-end: 1em;
+        }
+    }
+
+    &__title {
+        font-size: 1.4rem;
+        color: abs.$clr-primary;
+        margin-block-end: 1em;
+
+        i {
+            display: inline-block;
+            margin-inline-end: .5em;
+        }
+    }
+
     &__controls {
         position: relative;
         min-height: calc(var(--btn-size) + 1em);
+        margin-block-end: 1em;
     }
 
     &__btn {
@@ -67,9 +83,7 @@
         @include abs.absolute(top 0 left 0);
 
         &--hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
+            display: none;
 
         }
 
@@ -80,10 +94,14 @@
 
     &__next-level {
         @include abs.flex(center, space-between);
+
+        &::after {
+            content: '\f054';
+            font-family: 'Font Awesome 5 Free';
+        }
     }
 
     &__link {
-        display: block;
         text-transform: uppercase;
         font-weight: 700;
         font-size: 1.3rem;

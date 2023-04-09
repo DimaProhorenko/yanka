@@ -1,9 +1,7 @@
 const burger = document.querySelector('.burger');
 const closeMNBtn = document.querySelector('.mn__btn--close');
 const mobileMenu = document.querySelector('.mn');
-const initialMobileMenuPanels = document.querySelector('.mn__panels--initial');
-const mnBackBtn = document.querySelector('.mn__btn--back');
-let mnPrevPanel;
+
 
 const backdrop = document.querySelector('.backdrop');
 
@@ -12,7 +10,9 @@ const mobileSearchFormClose = document.querySelector('.close-search');
 const mobileSearchForm = document.querySelector('.header__mobile-form');
 
 
-const mnNextLevel = document.querySelector('.mn__next-level');
+const mnNextLevel = document.querySelectorAll('.mn__next-level');
+const initialMobileMenuPanels = document.querySelector('.mn__panels--initial');
+const mnBackBtn = document.querySelector('.mn__btn--back');
 
 const showBackdrop = () => {
     backdrop.classList.add('active');
@@ -34,7 +34,6 @@ const hideMobileMenu = () => {
 const resetMobilePanels = () => {
     hidePanels();
     hideMnBackBtn();
-    initialMobileMenuPanels.classList.add('mn__panels--current');
 }
 
 const hidePanels = () => {
@@ -47,7 +46,6 @@ const toggleMnBackBtn = () => {
 }
 
 const showMnBackBtn = () => {
-    console.log(mnBackBtn);
     mnBackBtn.classList.remove('mn__btn--hidden');
 }
 
@@ -60,18 +58,17 @@ const showPanelHandler = (e) => {
     const clickedEl = e.target;
     const targetId = clickedEl.getAttribute('data-target');
     const target = document.querySelector(targetId);
-    mnPrevPanel = document.querySelector('.mn__panel--current');
     showMnBackBtn();
     target?.classList.add('mn__panels--current')
 }
 
 const showPrevPanelHandler = () => {
-    hidePanels();
-    if (mnPrevPanel) {
-        mnPrevPanel.classList.add('.mn__panels--current')
-    } else {
-        hideMnBackBtn();
-    }
+    const activePanels = [...document.querySelectorAll('.mn__panels--current')];
+    if (activePanels.length <= 1) hideMnBackBtn();
+
+    const lastPanel = activePanels.pop();
+    lastPanel.classList.remove('mn__panels--current');
+    
 }
 
 burger.addEventListener('click', () => {
@@ -96,7 +93,7 @@ mobileSearchFormClose.addEventListener('click', () => {
     mobileSearchForm.classList.remove('opened');
 })
 
-mnNextLevel.addEventListener('click', showPanelHandler);
+mnNextLevel.forEach(el => el.addEventListener('click', showPanelHandler));
 
 mnBackBtn.addEventListener('click', showPrevPanelHandler);
 

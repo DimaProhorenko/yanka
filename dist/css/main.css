@@ -584,7 +584,7 @@ button {
   background-color: #fff;
   width: 100%;
   max-width: 19.6875rem;
-  min-height: 100vh;
+  height: 100vh;
   padding: 2em;
   z-index: 1000;
   translate: -100% 0;
@@ -594,15 +594,18 @@ button {
 .mn.opened {
   translate: 0;
 }
+.mn__panels {
+  height: 100%;
+}
 .mn__panels-container {
   position: relative;
+  height: 100%;
 }
 .mn__panels--initial {
   z-index: 1;
 }
 .mn__panels--hidden {
-  opacity: 0;
-  translate: 100% 0;
+  translate: calc(100% + 4em) 0;
   transition: translate 300ms ease-in-out;
   pointer-events: none;
   position: absolute;
@@ -610,17 +613,28 @@ button {
   background-color: #fff;
 }
 .mn__panels--current {
-  opacity: 1;
   translate: 0;
   pointer-events: initial;
-  z-index: 3;
 }
 .mn__panels--prev {
   z-index: 2;
 }
+.mn__panel:not(:last-child) {
+  margin-block-end: 1em;
+}
+.mn__title {
+  font-size: 1.4rem;
+  color: #48cab2;
+  margin-block-end: 1em;
+}
+.mn__title i {
+  display: inline-block;
+  margin-inline-end: 0.5em;
+}
 .mn__controls {
   position: relative;
   min-height: calc(var(--btn-size) + 1em);
+  margin-block-end: 1em;
 }
 .mn__btn {
   width: 100%;
@@ -633,9 +647,7 @@ button {
   position: absolute;
 }
 .mn__btn--hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
 }
 .mn__btn--back {
   z-index: 4;
@@ -645,8 +657,11 @@ button {
   justify-content: space-between;
   align-items: center;
 }
+.mn__next-level::after {
+  content: "\f054";
+  font-family: "Font Awesome 5 Free";
+}
 .mn__link {
-  display: block;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.3rem;
