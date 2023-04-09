@@ -1,6 +1,8 @@
 @use '../abstracts/' as abs;
 
 .mn {
+    --btn-size: 1.8rem;
+
     @include abs.fixed(top 0 left 0);
     background-color: abs.$clr-body-bg;
     width: 100%;
@@ -9,6 +11,7 @@
     padding: 2em;
     z-index: 1000;
     translate: -100% 0;
+    overflow: hidden;
     transition: translate abs.$duration abs.$timing;
 
 
@@ -16,12 +19,70 @@
         translate: 0;
     }
 
-    &__close-btn {
-        font-size: 1.8rem;
+    &__panels {
+
+        &-container {
+            position: relative;
+        }
+        
+
+        &--initial {
+            z-index: 1;
+
+        }
+
+        &--hidden {
+            opacity: 0;
+            translate: 100% 0;
+            transition: translate abs.$duration abs.$timing;
+            pointer-events: none;
+            position: absolute;
+            inset: 0;
+            background-color: abs.$clr-body-bg;
+        }
+
+        &--current {
+            opacity: 1;
+            translate: 0;
+            pointer-events: initial;
+            z-index: 3;
+        }
+
+        &--prev {
+            z-index: 2;
+        }
+    }
+
+    &__controls {
+        position: relative;
+        min-height: calc(var(--btn-size) + 1em);
+    }
+
+    &__btn {
+        width: 100%;
+        text-align: left;
+        background-color: abs.$clr-body-bg;
+        font-size: var(--btn-size);
+        color: abs.$clr-text2;
+        @include abs.absolute(top 0 left 0);
+
+        &--hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+
+        }
+
+        &--back {
+            z-index: 4;
+        }
     }
 
     &__next-level {
         @include abs.flex(center, space-between);
+    }
+
+    &__link {
         text-transform: uppercase;
         font-weight: 700;
         font-size: 1.3rem;

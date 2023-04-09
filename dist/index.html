@@ -50,23 +50,40 @@
 
     <!-- Mobile nav -->
     <nav class="mn">
-      <ul class="mn__panels">
-        <li class="mn__panel mn__close">
-          <button
-            class="mn__close-btn"
-            aria-label="close navigation menu"
-            aria-expanded="true"
-          >
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </li>
-        <li class="mn__panel">
-          <a href="#" data-target="#mn-categories" class="mn__next-level">
-            Categories
-            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-          </a>
-        </li>
-      </ul>
+      <div class="mn__controls">
+        <button
+          class="mn__btn mn__btn--close"
+          aria-label="close navigation menu"
+          aria-expanded="true"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <button class="mn__btn mn__btn--back mn__btn--hidden" aria-label="Back">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+      </div>
+      <div class="mn__panels-container">
+        <div class="mn__panels mn__panels--initial">
+          <ul>
+            <li class="mn__panel">
+              <a
+                href="#"
+                data-target="#mn-categories"
+                class="mn__next-level mn__link"
+              >
+                Categories
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mn__panels mn__panels--hidden" id="mn-categories">
+          <ul>
+            <li class="mn__panel mn__back"></li>
+            <li class="mn__panel"><a href="#" class="mn__link">Hello</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
     <header class="header">

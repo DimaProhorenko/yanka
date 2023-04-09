@@ -524,6 +524,10 @@ button {
 .form__group--border {
   padding-inline: 0.5em;
   border: 1px solid #888;
+  transition: border-color 300ms ease-in-out;
+}
+.form__group--border:hover, .form__group--border:focus {
+  border-color: #48cab2;
 }
 .form__label {
   display: block;
@@ -556,7 +560,7 @@ button {
   outline: none;
 }
 .form__control::placeholder {
-  color: #000;
+  color: #888;
 }
 
 .sm {
@@ -573,6 +577,7 @@ button {
 }
 
 .mn {
+  --btn-size: 1.8rem;
   top: 0;
   left: 0;
   position: fixed;
@@ -583,24 +588,70 @@ button {
   padding: 2em;
   z-index: 1000;
   translate: -100% 0;
+  overflow: hidden;
   transition: translate 300ms ease-in-out;
 }
 .mn.opened {
   translate: 0;
 }
-.mn__close-btn {
-  font-size: 1.8rem;
+.mn__panels-container {
+  position: relative;
+}
+.mn__panels--initial {
+  z-index: 1;
+}
+.mn__panels--hidden {
+  opacity: 0;
+  translate: 100% 0;
+  transition: translate 300ms ease-in-out;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background-color: #fff;
+}
+.mn__panels--current {
+  opacity: 1;
+  translate: 0;
+  pointer-events: initial;
+  z-index: 3;
+}
+.mn__panels--prev {
+  z-index: 2;
+}
+.mn__controls {
+  position: relative;
+  min-height: calc(var(--btn-size) + 1em);
+}
+.mn__btn {
+  width: 100%;
+  text-align: left;
+  background-color: #fff;
+  font-size: var(--btn-size);
+  color: #888;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.mn__btn--hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.mn__btn--back {
+  z-index: 4;
 }
 .mn__next-level {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.mn__link {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.3rem;
   letter-spacing: 1px;
 }
-.mn__next-level i {
+.mn__link i {
   color: #888;
 }
 
@@ -619,7 +670,7 @@ button {
 }
 
 .header__top {
-  padding-block: 1em;
+  padding-block: 0.5em;
   border-bottom: 1px solid #cacaca;
   text-align: center;
 }

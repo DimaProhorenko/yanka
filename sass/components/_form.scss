@@ -8,6 +8,12 @@
         &--border {
             padding-inline: .5em;
             border: abs.$form-group-border;
+            @include abs.transition(border-color);
+
+            &:hover,
+            &:focus {
+                border-color: abs.$input-focus-border-color;
+            }
         }
     }
 
@@ -46,7 +52,7 @@
         }
 
         &::placeholder {
-            color: abs.$input-text-color;
+            color: abs.$input-placeholder-color;
         }
 
     }
