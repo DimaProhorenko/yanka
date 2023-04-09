@@ -62,7 +62,7 @@ const showPanelHandler = (e) => {
     const target = document.querySelector(targetId);
     mnPrevPanel = document.querySelector('.mn__panel--current');
     showMnBackBtn();
-    target.classList.add('mn__panels--current')
+    target?.classList.add('mn__panels--current')
 }
 
 const showPrevPanelHandler = () => {

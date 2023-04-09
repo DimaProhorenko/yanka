@@ -646,6 +646,7 @@ button {
   align-items: center;
 }
 .mn__link {
+  display: block;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.3rem;
@@ -653,6 +654,7 @@ button {
 }
 .mn__link i {
   color: #888;
+  pointer-events: none;
 }
 
 .backdrop {
