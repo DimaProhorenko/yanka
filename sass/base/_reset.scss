@@ -43,6 +43,9 @@ h6 {
 a[aria-current=page] {
     color: abs.$clr-primary;
     
+    &::after {
+      scale: 1;
+    }
 }
 
 /* A elements that don't have a class get default styles */

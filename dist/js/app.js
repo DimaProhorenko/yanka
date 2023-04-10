@@ -1,6 +1,8 @@
-const burger = document.querySelector('.burger');
+const mobileBurger = document.querySelector('#mobile-burger');
+const desktopBurger = document.querySelector('#desktop-burger');
 const closeMNBtn = document.querySelector('.mn__btn--close');
 const mobileMenu = document.querySelector('.mn');
+
 
 
 const backdrop = document.querySelector('.backdrop');
@@ -13,6 +15,11 @@ const mobileSearchForm = document.querySelector('.header__mobile-form');
 const mnNextLevel = document.querySelectorAll('.mn__next-level');
 const initialMobileMenuPanels = document.querySelector('.mn__panels--initial');
 const mnBackBtn = document.querySelector('.mn__btn--back');
+
+const stickyHeader = document.querySelector('.header__bot');
+const stickyHeaderEl = document.querySelector('.header__bot-content')
+const stickyHeaderHeight = stickyHeaderEl.offsetHeight;
+const stickyHeaderOffset = stickyHeader.offsetTop;
 
 const showBackdrop = () => {
     backdrop.classList.add('active');
@@ -71,12 +78,20 @@ const showPrevPanelHandler = () => {
     
 }
 
-burger.addEventListener('click', () => {
-    burger.classList.add('opened');
-    burger.setAttribute('aria-expanded', true);
+mobileBurger.addEventListener('click', () => {
+    mobileBurger.classList.add('opened');
+    mobileBurger.setAttribute('aria-expanded', true);
     mobileMenu.classList.add('opened');
     showBackdrop();
 })
+
+
+desktopBurger.addEventListener('click', () => {
+    desktopBurger.classList.toggle('opened');
+})
+
+
+
 
 closeMNBtn.addEventListener('click', () => {
     hideMobileMenu();
@@ -96,6 +111,25 @@ mobileSearchFormClose.addEventListener('click', () => {
 mnNextLevel.forEach(el => el.addEventListener('click', showPanelHandler));
 
 mnBackBtn.addEventListener('click', showPrevPanelHandler);
+
+
+window.addEventListener('scroll', e => {
+    const scroll = window.scrollY;
+    console.log(stickyHeaderHeight)
+    console.log(`scroll: ${scroll}`);
+    console.log(`offset: ${stickyHeaderOffset}`);
+    if (scroll < stickyHeaderOffset) {
+        console.log('remove');
+        stickyHeaderEl.classList.remove('sticked');
+    } else if (scroll >= stickyHeaderOffset + stickyHeaderHeight) {
+        if (!stickyHeaderEl.classList.contains('sticked')) {
+            stickyHeaderEl.classList.add('sticked');
+        }
+    }
+})
+
+
+
 
 const headerTopSlider = new Swiper('.header__top-slider', {
     loop: true,

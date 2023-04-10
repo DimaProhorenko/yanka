@@ -87,9 +87,36 @@
     }
 
     &__bot {
-        &-left,
         &-right {
-            padding: .5em;
+            padding: 1em 3em;
         }
+
+        &-content {
+
+            &.sticked {
+                z-index: 100;
+                @include abs.fixed(top 0 left 50%);
+                translate: -50% 0;
+                width: 90%;
+                max-width: abs.$max-width;
+                transform-origin: top left;
+                animation: sticky-grow 100ms ease-in-out 1;
+
+                & > * {
+                    // background-color: abs.$clr-body-bg;
+                    // color: abs.$clr-text;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes sticky-grow {
+    from {
+        scale: 1 0;
+    }
+    to {
+        scale: 1;
     }
 }

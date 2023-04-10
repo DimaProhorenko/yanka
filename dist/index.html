@@ -403,6 +403,7 @@
               class="burger"
               aria-expanded="false"
               aria-label="toggle navigation menu"
+              id="mobile-burger"
             >
               <span class="burger__line burger__line--top"></span>
               <span class="burger__line burger__line--mid"></span>
@@ -460,35 +461,75 @@
       <div class="header__bot hide-mobile">
         <div class="wrapper">
           <div class="row header__bot-content">
-            <div class="col-lg-3 p-1 bg-primary header__bot-left">
-              <button class="burger burger--desktop" id="burger-desktop">
-                <span class="burger__line burger__line--top"></span>
-                <span class="burger__line burger__line--mid"></span>
-                <span class="burger__line burger__line--bot"></span>
+            <div class="col-lg-3 bg-primary header__bot-left">
+              <button
+                class="burger burger--secondary burger--desktop burger--anim"
+                id="desktop-burger"
+              >
+                <div class="burger__lines">
+                  <span class="burger__line burger__line--top"></span>
+                  <span class="burger__line burger__line--mid"></span>
+                  <span class="burger__line burger__line--bot"></span>
+                </div>
+                <span class="burger__desc">Categories</span>
               </button>
             </div>
-            <div class="col-lg-9 p-1 bg-dark header__bot-right">
+            <div class="col-lg-9 bg-dark header__bot-right d-flex ai-center">
               <nav class="nav">
                 <ul class="nav__list d-flex ai-center">
                   <li>
-                    <a href="#" class="nav__link" aria-current="page">Home</a>
+                    <a
+                      href="#"
+                      class="nav__link underline--grow"
+                      aria-current="page"
+                      >Home</a
+                    >
                   </li>
                   <li>
-                    <a href="#" class="nav__link">Shop</a>
+                    <a href="#" class="nav__link underline--grow">Shop</a>
                   </li>
                   <li>
-                    <a href="#" class="nav__link">About</a>
+                    <a href="#" class="nav__link underline--grow">About</a>
                   </li>
                   <li>
-                    <a href="#" class="nav__link">Contact us</a>
+                    <a href="#" class="nav__link underline--grow">Contact us</a>
                   </li>
                 </ul>
               </nav>
             </div>
           </div>
+          <!-- Row end -->
+          <div class="row">
+            <div class="col-lg-3">
+              <nav class="categories">
+                <ul>
+                  <li>
+                    <a href="#" class="categories__link header__link"
+                      >Women's</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="categories__link header__link">Men's</a>
+                  </li>
+                  <li>
+                    <a href="#" class="categories__link header__link"
+                      >Shipping</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="categories__link header__link">FAQs</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-lg-9 d-flex jc-center ai-center">banner</div>
+          </div>
         </div>
       </div>
     </header>
+
+    <section style="height: 100vh"></section>
+    <section style="height: 100vh"></section>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.2.0/swiper-bundle.min.js"

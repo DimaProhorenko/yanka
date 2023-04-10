@@ -1,0 +1,22 @@
+@use '../abstracts/' as abs;
+
+.categories {
+    color: abs.$clr-text;
+    padding: 1rem;
+    border: 1px solid abs.$clr-text2;
+    border-top: none;
+
+    li {
+        &:not(:first-child) {
+            margin-block-start: .25em;
+        }
+    }
+
+    &__link {
+        font-weight: 600;
+        text-transform: uppercase;
+
+        display: block;
+        padding-block: .25em;
+    }
+}

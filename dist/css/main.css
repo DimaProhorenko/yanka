@@ -40,6 +40,9 @@ h6 {
 a[aria-current=page] {
   color: #48cab2;
 }
+a[aria-current=page]::after {
+  scale: 1;
+}
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
@@ -242,11 +245,11 @@ button {
   color: #48cab2;
 }
 
-.underline {
+.underline--grow {
   display: inline-block;
   position: relative;
 }
-.underline::after {
+.underline--grow::after {
   content: "";
   width: 100%;
   height: 2px;
@@ -256,8 +259,13 @@ button {
   position: absolute;
   transition: scale 300ms ease-in-out;
 }
-.underline:hover::after {
+
+.underline--grow::after {
+  transform-origin: top left;
   scale: 0 1;
+}
+.underline--grow:hover::after {
+  scale: 1;
 }
 
 .bg-primary {
@@ -618,7 +626,6 @@ button {
 }
 
 .burger {
-  display: block;
   width: 1.875rem;
   height: 1.875rem;
   display: flex;
@@ -626,16 +633,67 @@ button {
   align-items: center;
   flex-direction: column;
 }
-.burger:hover {
+.burger--secondary {
+  color: #fff;
+}
+.burger--secondary .burger__line {
+  background-color: #fff;
+}
+.burger--desktop {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding-inline-start: 2em;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.burger--desktop .burger__line {
+  display: block;
+  line-height: 1;
+}
+.burger__lines {
+  width: 1.875rem;
+  height: 1.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-inline-end: 1em;
+}
+.burger:not(.burger--desktop):hover, .burger--desktop:hover .burger__lines {
   animation: burger-hover-scale 0.3s ease-in 1;
 }
 .burger__line {
+  display: inline-block;
   width: 80%;
   height: 3px;
   background-color: #000;
 }
 .burger__line--mid {
   margin-block: 3px;
+}
+.burger--anim .burger__line--top, .burger--anim .burger__line--bot {
+  transition: translate 300ms ease-in-out 300ms, rotate 300ms ease-in-out;
+}
+.burger--anim .burger__line--mid {
+  transition: opacity 300ms ease-in-out 300ms;
+}
+.burger--anim.opened .burger__line--top, .burger--anim.opened .burger__line--bot {
+  transition: translate 300ms ease-in-out, rotate 300ms ease-in-out 300ms;
+}
+.burger--anim.opened .burger__line--top {
+  rotate: 45deg;
+  translate: 0 6px;
+}
+.burger--anim.opened .burger__line--bot {
+  rotate: -45deg;
+  translate: 0 -6px;
+}
+.burger--anim.opened .burger__line--mid {
+  opacity: 0;
 }
 @keyframes burger-hover-scale {
   0%, 100% {
@@ -815,9 +873,26 @@ button {
   line-height: 1;
   text-transform: uppercase;
   display: inline-block;
+  padding-block: 0.25em;
 }
 .nav li:not(:first-child) {
   margin-inline-start: 1em;
+}
+
+.categories {
+  color: #333;
+  padding: 1rem;
+  border: 1px solid #888;
+  border-top: none;
+}
+.categories li:not(:first-child) {
+  margin-block-start: 0.25em;
+}
+.categories__link {
+  font-weight: 600;
+  text-transform: uppercase;
+  display: block;
+  padding-block: 0.25em;
 }
 
 .header__top {
@@ -887,6 +962,25 @@ button {
 .header__desktop span {
   margin-inline: 0.5em;
 }
-.header__bot-left, .header__bot-right {
-  padding: 0.5em;
+.header__bot-right {
+  padding: 1em 3em;
+}
+.header__bot-content.sticked {
+  z-index: 100;
+  top: 0;
+  left: 50%;
+  position: fixed;
+  translate: -50% 0;
+  width: 90%;
+  max-width: 76.25rem;
+  transform-origin: top left;
+  animation: sticky-grow 100ms ease-in-out 1;
+}
+@keyframes sticky-grow {
+  from {
+    scale: 1 0;
+  }
+  to {
+    scale: 1;
+  }
 }

@@ -2,23 +2,96 @@
 
 
 .burger {
-    display: block;
     width: abs.$burger-size;
     height: abs.$burger-size;
     @include abs.flex-center(column);
 
-    &:hover {
+    &--secondary {
+        color: abs.$clr-text3;
+        .burger__line {
+            background-color: abs.$clr-burger-line-secondary;
+        }
+    }
+
+    &--desktop {
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+        
+        padding-inline-start: 2em;
+
+        flex-direction: row;
+        justify-content: flex-start;
+        
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+
+        .burger__line {
+            display: block;
+            line-height: 1;
+        }
+    }
+
+    &__lines {
+        width: abs.$burger-size;
+        height: abs.$burger-size;
+        @include abs.flex-center(column);
+        margin-inline-end: 1em;
+    }
+
+    &:not(.burger--desktop):hover,
+    &--desktop:hover .burger__lines {
         animation: burger-hover-scale .3s ease-in 1;
     }
 
 
     &__line {
+        display: inline-block;
         width: 80%;
         height: abs.$burger-line-height;
         background-color: abs.$clr-burger-line;
 
         &--mid {
             margin-block:  abs.$burger-line-gap;
+        }
+    }
+
+    &--anim {
+        .burger__line {
+
+            &--top,
+            &--bot {
+                transition: translate abs.$duration abs.$timing  abs.$duration, rotate abs.$duration abs.$timing;
+            }
+
+            &--mid {
+                transition: opacity abs.$duration abs.$timing abs.$duration;
+            }
+        }
+
+        &.opened {
+            .burger__line {
+
+                &--top,
+                &--bot {
+                    transition: translate abs.$duration abs.$timing, rotate abs.$duration abs.$timing abs.$duration;
+                }
+
+                &--top {
+                    rotate: 45deg;
+                    translate: 0 calc(abs.$burger-line-gap + abs.$burger-line-height);
+                }
+                
+                &--bot {
+                    rotate: -45deg;
+                    translate: 0 calc((abs.$burger-line-gap + abs.$burger-line-height) * -1);
+                }
+
+                &--mid {
+                    opacity: 0;
+                }
+            }
         }
     }
 
