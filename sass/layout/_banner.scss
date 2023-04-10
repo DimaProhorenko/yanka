@@ -3,6 +3,7 @@
 .banner {
     --slide-overlay: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55));
     padding-block: 1.5em;
+    text-align: center;
 
     &__slide {
 
@@ -17,9 +18,17 @@
         }
     }
 
+    &__slider,
+    &__side {
+        height: abs.toRem(400);
+    }
+
 
     &__content {
+        width: 80%;
+        max-width: abs.toRem(400);
         min-height: abs.toRem(350);
+        margin-inline: auto;
         
         @include abs.flex(center, center, column);
         color: abs.$clr-text3;
@@ -37,5 +46,16 @@
         font-size: clamp(1.375rem, 1.3rem + 0.375vw, 1.75rem);
         text-transform: uppercase;
         letter-spacing: 4px;
+    }
+
+    &__side {
+        max-width: abs.toRem(270);
+        margin-inline: auto;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
     }
 }

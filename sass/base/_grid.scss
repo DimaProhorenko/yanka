@@ -3,7 +3,7 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-    --gutter: 0;
+    --gutter: 1.5rem;
     --gutter-y: 0;
     margin-inline: calc(-0.5 * var(--gutter));
     margin-block-start: calc(-1 * var(--gutter-y));

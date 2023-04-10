@@ -97,9 +97,23 @@
         &-left,
         &-right {
             @include abs.transition(background-color);
+            height: 100%;
         }
         &-right {
-            padding: 1em 3em;
+            padding-block: 1em;
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                
+                background-color: inherit;
+
+                @include abs.absolute(top 0 left 0);
+                translate: -1.5rem 0;
+                z-index: -1;
+            }
         }
 
         &-content {

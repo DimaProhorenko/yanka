@@ -409,7 +409,34 @@
 
       <div class="header__desktop hide-mobile">
         <div class="wrapper">
-          <div class="row ai-center jc-sb">
+          <div class="d-flex ai-center jc-sb">
+            <a href="/" class="logo logo--xl" aria-label="Yanka homepage"
+              >Yanka</a
+            >
+            <div class="header__desktop-form">
+              <form action="" class="header__desktop-form">
+                <div class="form__group form__group--border d-flex">
+                  <input
+                    type="text"
+                    class="form__control form__control--no-border"
+                    required
+                    placeholder="Search products..."
+                  />
+                  <button type="submit" aria-label="Search button">
+                    <i class="fa-solid fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="d-flex">
+              <button class="header__btn" aria-label="toggle shopping cart">
+                <i class="fa-solid fa-shopping-basket"></i>
+              </button>
+              <span>Lang</span>
+              <span>USD</span>
+            </div>
+          </div>
+          <!-- <div class="row ai-center jc-sb">
             <div class="col">
               <a href="/" class="logo logo--xl" aria-label="Yanka homepage"
                 >Yanka</a
@@ -437,355 +464,361 @@
               <span>Lang</span>
               <span>USD</span>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
 
       <div class="header__bot hide-mobile">
         <div class="header__bot-content">
-          <div class="wrapper">
+          <div class="wrapper bg-dar">
             <div class="row">
-              <div class="col-lg-3 bg-primary header__bot-left relative">
-                <button
-                  class="burger burger--secondary burger--desktop burger--lines-hidden burger--anim"
-                  id="desktop-burger"
-                >
-                  <div class="burger__lines">
-                    <span class="burger__line burger__line--top"></span>
-                    <span class="burger__line burger__line--mid"></span>
-                    <span class="burger__line burger__line--bot"></span>
-                  </div>
-                  <span class="burger__desc">Categories</span>
-                </button>
-                <nav class="categories categories--sticky shadow">
-                  <ul>
-                    <li class="categories__li">
-                      <a
-                        href="#"
-                        class="categories__link header__link next-level"
-                        >Women's</a
-                      >
-                      <div class="categories__dropdown shadow">
-                        <div class="row gx-5">
-                          <div class="col">
-                            <h2 class="categories__title">Clothing</h2>
-                            <ul>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Coats</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Blazers</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Dresses</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Pants</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Jeans</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >T-shirts</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Sweatshirts</a
-                                >
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="col">
-                            <h2 class="categories__title">Shoes</h2>
-                            <ul>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Trainers</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Boots</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Heels</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Flats</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Platforms</a
-                                >
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="col">
-                            <h2 class="categories__title">Accessories</h2>
-                            <ul>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Bags</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Backpacks</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Bags</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Belts</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Jewellery</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Purses</a
-                                >
-                              </li>
-                            </ul>
+              <div class="col-lg-3">
+                <div class="header__bot-left relative bg-primary">
+                  <button
+                    class="burger burger--secondary burger--desktop burger--lines-hidden burger--anim"
+                    id="desktop-burger"
+                  >
+                    <div class="burger__lines">
+                      <span class="burger__line burger__line--top"></span>
+                      <span class="burger__line burger__line--mid"></span>
+                      <span class="burger__line burger__line--bot"></span>
+                    </div>
+                    <span class="burger__desc">Categories</span>
+                  </button>
+                  <nav class="categories categories--sticky shadow">
+                    <ul>
+                      <li class="categories__li">
+                        <a
+                          href="#"
+                          class="categories__link header__link next-level"
+                          >Women's</a
+                        >
+                        <div class="categories__dropdown shadow">
+                          <div class="row gx-5">
+                            <div class="col">
+                              <h2 class="categories__title">Clothing</h2>
+                              <ul>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Coats</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Blazers</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Dresses</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Pants</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Jeans</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >T-shirts</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Sweatshirts</a
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="col">
+                              <h2 class="categories__title">Shoes</h2>
+                              <ul>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Trainers</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Boots</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Heels</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Flats</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Platforms</a
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="col">
+                              <h2 class="categories__title">Accessories</h2>
+                              <ul>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Bags</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Backpacks</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Bags</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Belts</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Jewellery</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Purses</a
+                                  >
+                                </li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </li>
-                    <!-- Category item end -->
+                      </li>
+                      <!-- Category item end -->
 
-                    <li class="categories__li">
-                      <a
-                        href="#"
-                        class="categories__link header__link next-level"
-                        >Men's</a
-                      >
-                      <div class="categories__dropdown shadow">
-                        <div class="row gx-5">
-                          <div class="col">
-                            <h2 class="categories__title">Clothing</h2>
-                            <ul>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Coats</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Blazers</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Pants</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Jeans</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >T-shirts</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Sweatshirts</a
-                                >
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="col">
-                            <h2 class="categories__title">Shoes</h2>
-                            <ul>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Trainers</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Boots</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Loafers</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >dress shoes</a
-                                >
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="col">
-                            <h2 class="categories__title">Accessories</h2>
-                            <ul>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Bags</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Backpacks</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Bags</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Belts</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Jewellery</a
-                                >
-                              </li>
-                              <li class="categories__li">
-                                <a
-                                  href="#"
-                                  class="categories__link categories__link--sm"
-                                  >Watches</a
-                                >
-                              </li>
-                            </ul>
+                      <li class="categories__li">
+                        <a
+                          href="#"
+                          class="categories__link header__link next-level"
+                          >Men's</a
+                        >
+                        <div class="categories__dropdown shadow">
+                          <div class="row gx-5">
+                            <div class="col">
+                              <h2 class="categories__title">Clothing</h2>
+                              <ul>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Coats</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Blazers</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Pants</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Jeans</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >T-shirts</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Sweatshirts</a
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="col">
+                              <h2 class="categories__title">Shoes</h2>
+                              <ul>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Trainers</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Boots</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Loafers</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >dress shoes</a
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="col">
+                              <h2 class="categories__title">Accessories</h2>
+                              <ul>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Bags</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Backpacks</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Bags</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Belts</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Jewellery</a
+                                  >
+                                </li>
+                                <li class="categories__li">
+                                  <a
+                                    href="#"
+                                    class="categories__link categories__link--sm"
+                                    >Watches</a
+                                  >
+                                </li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </li>
-                    <li>
-                      <a href="#" class="categories__link header__link"
-                        >Shipping</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" class="categories__link header__link">FAQs</a>
-                    </li>
-                  </ul>
-                </nav>
+                      </li>
+                      <li>
+                        <a href="#" class="categories__link header__link"
+                          >Shipping</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="categories__link header__link"
+                          >FAQs</a
+                        >
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
               </div>
-              <div class="col-lg-9 bg-dark header__bot-right d-flex ai-center">
-                <nav class="nav">
-                  <ul class="nav__list d-flex ai-center">
-                    <li>
-                      <a
-                        href="#"
-                        class="nav__link underline--grow"
-                        aria-current="page"
-                        >Home</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" class="nav__link underline--grow">Shop</a>
-                    </li>
-                    <li>
-                      <a href="#" class="nav__link underline--grow">About</a>
-                    </li>
-                    <li>
-                      <a href="#" class="nav__link underline--grow"
-                        >Contact us</a
-                      >
-                    </li>
-                  </ul>
-                </nav>
+              <div class="col-lg-9">
+                <div class="bg-dark header__bot-right d-flex ai-center">
+                  <nav class="nav">
+                    <ul class="nav__list d-flex ai-center">
+                      <li>
+                        <a
+                          href="#"
+                          class="nav__link underline--grow"
+                          aria-current="page"
+                          >Home</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="nav__link underline--grow">Shop</a>
+                      </li>
+                      <li>
+                        <a href="#" class="nav__link underline--grow">About</a>
+                      </li>
+                      <li>
+                        <a href="#" class="nav__link underline--grow"
+                          >Contact us</a
+                        >
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
               </div>
             </div>
           </div>
@@ -797,9 +830,9 @@
     <section class="banner section">
       <div class="wrapper">
         <div class="row g-all-3 jc-center">
-          <div class="col-md-3"></div>
+          <div class="col-md-3 hide-mobile"></div>
           <div class="col-xs-12 col-md-8 col-lg-6">
-            <div class="swiper banner__slider slider card">
+            <div class="swiper banner__slider slider">
               <div class="swiper-wrapper">
                 <div class="swiper-slide banner__slide slider__slide">
                   <div class="banner__content flow flow--sm">
@@ -834,7 +867,9 @@
             </div>
           </div>
           <div class="col-xs-12 col-md-4 col-lg-3">
-            <div class="card">side-banner</div>
+            <div class="banner__side">
+              <img src="./assets/img/banner/4.jpg" alt="" />
+            </div>
           </div>
         </div>
       </div>
