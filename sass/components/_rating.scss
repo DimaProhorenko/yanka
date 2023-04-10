@@ -1,0 +1,7 @@
+@use '../abstracts/' as abs;
+
+.rating {
+    @include abs.flex;
+    gap: .25em;
+    color: abs.$clr-rating;
+}

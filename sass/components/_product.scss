@@ -1,0 +1,46 @@
+@use '../abstracts/' as abs;
+
+.product {
+
+
+    &__images {
+        position: relative;
+    }
+
+    &__img {
+
+        &--over {
+            display: none;
+        }
+    }
+
+    &__brand {
+        display: block;
+        font-size: .8rem;
+        color: abs.$clr-text2;
+        text-transform: uppercase;
+        // margin-block-start: 2em;
+    }
+
+    &__title {
+        font-size: 1rem;
+        font-weight: 300;
+        margin-block-start: .5em;
+    }
+
+    &__bottom {
+        @include abs.flex(flex-start, null, column-reverse);
+        gap: 1em;
+    }
+
+    &__price {
+        color: abs.$clr-primary;
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    &__btn {
+        display: block;
+        width: 100%;
+    }
+}

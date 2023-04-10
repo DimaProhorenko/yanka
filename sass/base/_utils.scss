@@ -12,6 +12,21 @@
     @include abs.for-laptop-up {
         padding-block: 5em;
     }
+
+    &__title {
+        font-size: abs.toRem(36);
+        letter-spacing: 1px;
+        text-align: center;
+        margin-block-end: 1em;
+        a {
+            @include abs.transition(color);
+
+            &:hover {
+                color: abs.$clr-primary;
+                text-decoration: none;
+            }
+        }
+    }
 }
 
 .hide-mobile {
@@ -135,7 +150,7 @@
     img {
         @include abs.transition(scale);
     }
-    
+
     &:hover {
         img {
             scale: 1.1;

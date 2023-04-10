@@ -112,8 +112,6 @@ const desktopHeaderScrollHandler = (scroll) => {
 }
 
 const mobileHeaderScrollHandler = (scroll) => {
-    console.log(`offset: ${mobileHeaderOffset}`);
-    console.log(`scroll: ${scroll}`);
     if (scroll < mobileHeaderOffset) {
         removeClass(mobileHeader, 'sticked');
     } else if (scroll >= mobileHeaderOffset) {
@@ -123,7 +121,6 @@ const mobileHeaderScrollHandler = (scroll) => {
 
 
 const setupHeaderVars = () => {
-    console.log('triggered')
     stickyHeader = document.querySelector('.header__bot');
     stickyHeaderEl = document.querySelector('.header__bot-content')
     stickyHeaderHeight = stickyHeaderEl.offsetHeight;
@@ -134,7 +131,6 @@ const setupHeaderVars = () => {
 
     mobileHeader = document.querySelector('.header__mobile');
     mobileHeaderOffset = mobileHeader.offsetTop;
-    console.log(mobileHeader);
     mobileHeaderHeight = mobileHeader.offsetHeight;
 }
 

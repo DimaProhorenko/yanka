@@ -1,0 +1,24 @@
+@use '../abstracts/' as abs;
+
+%btn {
+    display: inline-block;
+    outline: none;
+    border: none;
+    
+    background-color: abs.$clr-primary;
+    color: abs.$clr-text3;
+
+    padding-block: .45em;
+    padding-inline: .75em;
+}
+
+.btn {
+    @extend %btn;
+
+    &--icon-left {
+        i {
+            display: inline-block;
+            margin-inline-end: .5em;
+        }
+    }
+}
