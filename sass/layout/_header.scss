@@ -4,7 +4,7 @@
 
     &__top {
         padding-block: .5em;
-        border-bottom: 1px solid #cacaca;
+        border-bottom: 1px solid #e9e9e9fb;
         text-align: center;
 
         &-wrapper {
@@ -41,6 +41,9 @@
 
     &__mobile {
         padding-block: 1em;
+        background-color: abs.$clr-body-bg;
+        z-index: 150;
+
 
         &.sticked {
             @include abs.fixed(top 0 left 0);
@@ -91,6 +94,10 @@
     }
 
     &__bot {
+        &-left,
+        &-right {
+            @include abs.transition(background-color);
+        }
         &-right {
             padding: 1em 3em;
         }
@@ -100,14 +107,13 @@
             &.sticked {
                 width: 100%;
 
-                border-block-end: 1px solid abs.$clr-text2;
+                box-shadow: abs.$shadow;
 
                 z-index: 100;
                 @include abs.fixed(top 0 left 50%);
                 translate: -50% 0;
 
                 transform-origin: top left;
-                animation: sticky-grow 100ms ease-in-out 1;
 
 
                 .header__bot-left,

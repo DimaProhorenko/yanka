@@ -1,0 +1,41 @@
+@use '../abstracts/' as abs;
+
+.banner {
+    --slide-overlay: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55));
+    padding-block: 1.5em;
+
+    &__slide {
+
+        &:first-child {
+            background: var(--slide-overlay), url('../assets/img/banner/1.jpg')  no-repeat center / cover;
+        }
+        &:nth-child(2) {
+            background: var(--slide-overlay), url('../assets/img/banner/2.jpg')  no-repeat center / cover;
+        }
+        &:nth-child(3) {
+            background: var(--slide-overlay), url('../assets/img/banner/3.jpg')  no-repeat center / cover;
+        }
+    }
+
+
+    &__content {
+        min-height: abs.toRem(350);
+        
+        @include abs.flex(center, center, column);
+        color: abs.$clr-text3;
+    }
+
+    &__subtitle {
+        font-size: 1.125rem;
+        font-size: clamp(1.125rem, 1.075rem + 0.25vw, 1.375rem);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    &__title {
+        font-size: 1.375rem;
+        font-size: clamp(1.375rem, 1.3rem + 0.375vw, 1.75rem);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+}

@@ -68,11 +68,33 @@
       .p-right-#{$key} {
         padding-inline-end: $value;
       }
-  }
+
+      .m-#{$key} {
+        margin: $value;
+      }
+      .mx-#{$key} {
+        margin-inline: $value;
+      }
+      .my-#{$key} {
+          margin-block: $value;
+      }
+      .m-top-#{$key} {
+        margin-block-start: $value;
+      }
+      .m-bottom-#{$key} {
+        margin-block-end: $value;
+      }
+      .m-left-#{$key} {
+        margin-inline-start: $value;
+      }
+      .m-right-#{$key} {
+        margin-inline-end: $value;
+      }
+    }
 }
 
 @mixin for-phone-tablet {
-    @media screen and (max-width: v.$lg) { @content; }
+    @media screen and (max-width: 1024px) { @content; }
 }
 
 @mixin for-tablet-up {
@@ -80,5 +102,5 @@
 }
 
 @mixin for-laptop-up {
-    @media screen and (min-width: v.$lg) { @content; }
+    @media screen and (min-width: 1025px) { @content; }
 }

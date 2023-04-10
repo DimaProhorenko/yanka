@@ -15,17 +15,17 @@ const mnNextLevel = document.querySelectorAll('.mn__next-level');
 const initialMobileMenuPanels = document.querySelector('.mn__panels--initial');
 const mnBackBtn = document.querySelector('.mn__btn--back');
 
-const stickyHeader = document.querySelector('.header__bot');
-const stickyHeaderEl = document.querySelector('.header__bot-content')
-const stickyHeaderHeight = stickyHeaderEl.offsetHeight;
-const stickyHeaderOffset = stickyHeader.offsetTop;
-const categories = stickyHeader.querySelector('.categories--sticky');
-const categoriesToggler = stickyHeader.querySelector('#desktop-burger');
-const hideWhenSticky = document.querySelector('.hide-when-sticky');
+let stickyHeader = document.querySelector('.header__bot');
+let stickyHeaderEl = document.querySelector('.header__bot-content')
+let stickyHeaderHeight = stickyHeaderEl.offsetHeight;
+let stickyHeaderOffset = stickyHeader.offsetTop;
+let categories = stickyHeader.querySelector('.categories--sticky');
+let categoriesToggler = stickyHeader.querySelector('#desktop-burger');
+let hideWhenSticky = document.querySelector('.hide-when-sticky');
 
-const mobileHeader = document.querySelector('.header__mobile');
-const mobileHeaderOffset = mobileHeader.offsetTop;
-const mobileHeaderHeight = mobileHeader.offsetHeight;
+let mobileHeader = document.querySelector('.header__mobile');
+let mobileHeaderOffset = mobileHeader.offsetTop;
+let mobileHeaderHeight = mobileHeader.offsetHeight;
 
 const addUniqueClass = (el, ...className) => {
     if (!el.classList.contains(...className)) {
@@ -104,22 +104,53 @@ const desktopHeaderScrollHandler = (scroll) => {
         removeClass(desktopBurger, 'opened');
         removeClass(categories, 'collapsed', 'sticked');
         addClass(categoriesToggler, 'burger--secondary', 'burger--lines-hidden');
-        hideWhenSticky.style.display = 'block';
-    } else if (scroll >= stickyHeaderOffset + stickyHeaderHeight) {
+    } else if (scroll >= stickyHeaderOffset) {
         addUniqueClass(stickyHeaderEl, 'sticked');
         addUniqueClass(categories, 'collapsed', 'sticked');
         removeClass(categoriesToggler, 'burger--secondary', 'burger--lines-hidden');
-        hideWhenSticky.style.display = 'none';
     }
 }
 
 const mobileHeaderScrollHandler = (scroll) => {
+    console.log(`offset: ${mobileHeaderOffset}`);
+    console.log(`scroll: ${scroll}`);
     if (scroll < mobileHeaderOffset) {
         removeClass(mobileHeader, 'sticked');
-    } else if (scroll >= mobileHeaderOffset + mobileHeaderHeight) {
+    } else if (scroll >= mobileHeaderOffset) {
         addUniqueClass(mobileHeader, 'sticked');
     }
 }
+
+
+const setupHeaderVars = () => {
+    console.log('triggered')
+    stickyHeader = document.querySelector('.header__bot');
+    stickyHeaderEl = document.querySelector('.header__bot-content')
+    stickyHeaderHeight = stickyHeaderEl.offsetHeight;
+    stickyHeaderOffset = stickyHeader.offsetTop;
+    categories = stickyHeader.querySelector('.categories--sticky');
+    categoriesToggler = stickyHeader.querySelector('#desktop-burger');
+    hideWhenSticky = document.querySelector('.hide-when-sticky');
+
+    mobileHeader = document.querySelector('.header__mobile');
+    mobileHeaderOffset = mobileHeader.offsetTop;
+    console.log(mobileHeader);
+    mobileHeaderHeight = mobileHeader.offsetHeight;
+}
+
+const resizeHandler = () => {
+    setupHeaderVars();
+
+}
+
+
+
+
+
+
+
+
+
 
 mobileBurger.addEventListener('click', () => {
     mobileBurger.classList.add('opened');
@@ -164,6 +195,16 @@ window.addEventListener('scroll', e => {
 })
 
 
+const mq = window.matchMedia('(min-width: 1024px)');
+const mq2 = window.matchMedia('(max-width: 1023px)');
+
+// mq.addEventListener('change', setupHeaderVars);
+// mq2.addEventListener('change', setupHeaderVars);
+
+window.addEventListener('resize', e => {
+    const windowWidth = window.innerWidth;
+    setupHeaderVars();
+})
 
 
 const headerTopSlider = new Swiper('.header__top-slider', {
@@ -171,4 +212,14 @@ const headerTopSlider = new Swiper('.header__top-slider', {
     autoplay: {
         delay: 4000,
     }
+})
+
+const bannerSlider = new Swiper('.banner__slider', {
+    // loop: true,
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        reverseDirection: true,
+    },
+    effect: 'fade',
 })

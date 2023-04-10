@@ -2,12 +2,21 @@
 
 .categories {
     color: abs.$clr-text;
-    padding: 1rem;
-    border: 1px solid abs.$clr-text2;
-    border-top: none;
-
+    padding-block: 1em;
+    
     &--sticky {
-        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+        height: fit-content;
+        z-index: 100;
+
+        a {
+            padding-inline: 1em;
+        }
+        // translate: 0 100%;
     }
 
     &.collapsed {
@@ -17,12 +26,13 @@
         overflow: hidden;
     }
 
-    &.sticked {
-        @include abs.absolute(bottom 0 left 0);
-        translate: 0 100%;
-        width: 100%;
-        display: block;
-    }
+    // &.sticked {
+    //     // @include abs.absolute(bottom 0 left 0);
+
+    //     // translate: 0 100%;
+    //     // width: 100%;
+    //     // display: block;
+    // }
 
     li {
         &:not(:first-child) {
@@ -34,7 +44,56 @@
         font-weight: 600;
         text-transform: uppercase;
 
-        display: block;
         padding-block: .25em;
+
+        &:not(.next-level) {
+            display: block;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &--sm {
+            font-weight: 400;
+            font-size: .75rem;
+            color: abs.$clr-text2;
+        }
+    }
+
+    &__title {
+        font-size: 1.2rem;
+        margin-block-end: .5em;
+    }
+
+
+    &__dropdown {
+        @include abs.absolute(top 0 left 100%);
+        width: max-content;
+        max-width: 60vw;
+        padding: 2em;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: 100;
+
+        background-color: abs.$clr-body-bg;
+        opacity: 0;
+        translate: 2em 0;
+
+        transition-property: opacity, translate;
+        transition-duration: abs.$duration;
+        transition-timing-function: abs.$timing;
+    }
+
+    &__li {
+        &:hover {
+
+            & > .categories__dropdown {
+                visibility: visible;
+                pointer-events: inherit;
+                translate: 0;
+                opacity: 1;
+            }
+        }
     }
 }

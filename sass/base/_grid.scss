@@ -46,6 +46,10 @@
         --gutter: #{$gut};
         --gutter-y: #{$gut};
     }
+
+    .gap-#{$key} {
+        gap: #{$gut};
+    }
 }
 
 .jc-center {
