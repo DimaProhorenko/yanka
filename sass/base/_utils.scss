@@ -26,6 +26,9 @@
     display: flex;
 }
 
+// Spacing
+@include abs.createSpacingUtils;
+
 .text-align {
     &-left {
         text-align: left;
@@ -63,5 +66,19 @@
 
     &:hover::after {
         scale: 0 1;
+    }
+}
+
+
+// BGs
+.bg {
+    &-primary {
+        background-color: abs.$clr-primary;
+        color: abs.$clr-text3;
+    }
+
+    &-dark {
+        background-color: abs.$clr-bg;
+        color: abs.$clr-text3;
     }
 }

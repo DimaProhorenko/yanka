@@ -45,6 +45,31 @@
     @include flex(center, center);
     flex-direction: $dir;
 }
+@mixin createSpacingUtils() {
+  @each $key, $value in v.$gutters {
+      .p-#{$key} {
+          padding: $value;
+      }
+      .px-#{$key} {
+          padding-inline: $value;
+      }
+      .py-#{$key} {
+          padding-block: $value;
+      }
+      .p-top-#{$key} {
+        padding-block-start: $value;
+      }
+      .p-bottom-#{$key} {
+        padding-block-end: $value;
+      }
+      .p-left-#{$key} {
+        padding-inline-start: $value;
+      }
+      .p-right-#{$key} {
+        padding-inline-end: $value;
+      }
+  }
+}
 
 @mixin for-phone-tablet {
     @media screen and (max-width: v.$lg) { @content; }

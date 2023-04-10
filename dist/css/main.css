@@ -37,6 +37,10 @@ h6 {
   line-height: 1;
 }
 
+a[aria-current=page] {
+  color: #48cab2;
+}
+
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
@@ -112,6 +116,118 @@ button {
   display: flex;
 }
 
+.p-0 {
+  padding: 0;
+}
+
+.px-0 {
+  padding-inline: 0;
+}
+
+.py-0 {
+  padding-block: 0;
+}
+
+.p-top-0 {
+  padding-block-start: 0;
+}
+
+.p-bottom-0 {
+  padding-block-end: 0;
+}
+
+.p-left-0 {
+  padding-inline-start: 0;
+}
+
+.p-right-0 {
+  padding-inline-end: 0;
+}
+
+.p-1 {
+  padding: 1em;
+}
+
+.px-1 {
+  padding-inline: 1em;
+}
+
+.py-1 {
+  padding-block: 1em;
+}
+
+.p-top-1 {
+  padding-block-start: 1em;
+}
+
+.p-bottom-1 {
+  padding-block-end: 1em;
+}
+
+.p-left-1 {
+  padding-inline-start: 1em;
+}
+
+.p-right-1 {
+  padding-inline-end: 1em;
+}
+
+.p-2 {
+  padding: 2em;
+}
+
+.px-2 {
+  padding-inline: 2em;
+}
+
+.py-2 {
+  padding-block: 2em;
+}
+
+.p-top-2 {
+  padding-block-start: 2em;
+}
+
+.p-bottom-2 {
+  padding-block-end: 2em;
+}
+
+.p-left-2 {
+  padding-inline-start: 2em;
+}
+
+.p-right-2 {
+  padding-inline-end: 2em;
+}
+
+.p-3 {
+  padding: 3em;
+}
+
+.px-3 {
+  padding-inline: 3em;
+}
+
+.py-3 {
+  padding-block: 3em;
+}
+
+.p-top-3 {
+  padding-block-start: 3em;
+}
+
+.p-bottom-3 {
+  padding-block-end: 3em;
+}
+
+.p-left-3 {
+  padding-inline-start: 3em;
+}
+
+.p-right-3 {
+  padding-inline-end: 3em;
+}
+
 .text-align-left {
   text-align: left;
 }
@@ -142,6 +258,15 @@ button {
 }
 .underline:hover::after {
   scale: 0 1;
+}
+
+.bg-primary {
+  background-color: #48cab2;
+  color: #fff;
+}
+.bg-dark {
+  background-color: #333;
+  color: #fff;
 }
 
 .row {
@@ -686,6 +811,15 @@ button {
   pointer-events: initial;
 }
 
+.nav__link {
+  line-height: 1;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.nav li:not(:first-child) {
+  margin-inline-start: 1em;
+}
+
 .header__top {
   padding-block: 0.5em;
   border-bottom: 1px solid #cacaca;
@@ -752,4 +886,7 @@ button {
 }
 .header__desktop span {
   margin-inline: 0.5em;
+}
+.header__bot-left, .header__bot-right {
+  padding: 0.5em;
 }

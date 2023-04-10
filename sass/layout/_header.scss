@@ -85,4 +85,11 @@
             margin-inline: .5em;
         }
     }
+
+    &__bot {
+        &-left,
+        &-right {
+            padding: .5em;
+        }
+    }
 }
