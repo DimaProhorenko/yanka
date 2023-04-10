@@ -1347,7 +1347,7 @@ button {
 .header__desktop span {
   margin-inline: 0.5em;
 }
-.header__desktop-form {
+.header__desktop-form-container {
   width: 40%;
   max-width: 25rem;
 }
