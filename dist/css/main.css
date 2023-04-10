@@ -1008,6 +1008,9 @@ button {
   }
 }
 
+.form {
+  width: 100%;
+}
 .form__group--border {
   padding-inline: 0.5em;
   border: 1px solid #888;
@@ -1324,6 +1327,10 @@ button {
 }
 .header__desktop span {
   margin-inline: 0.5em;
+}
+.header__desktop-form {
+  width: 40%;
+  max-width: 25rem;
 }
 .header__bot-left, .header__bot-right {
   transition: background-color 300ms ease-in-out;

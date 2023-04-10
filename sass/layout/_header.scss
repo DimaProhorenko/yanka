@@ -91,6 +91,11 @@
         span {
             margin-inline: .5em;
         }
+
+        &-form {
+            width: 40%;
+            max-width: abs.toRem(400);
+        }
     }
 
     &__bot {
