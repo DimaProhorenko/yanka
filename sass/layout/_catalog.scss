@@ -1,0 +1,19 @@
+@use '../abstracts/' as abs;
+
+.catalog {
+    text-align: center;
+
+    &__image {
+        overflow: hidden;
+    }
+
+    &__img {
+        // width: 80%;
+        // padding-block-end: 1em;
+    }
+
+    &__link {
+        display: block;
+        padding-block: 1em .15em;
+    }
+}

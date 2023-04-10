@@ -49,8 +49,12 @@
     }
 
     &__side {
-        max-width: abs.toRem(270);
         margin-inline: auto;
+        overflow: hidden;
+
+        @include abs.for-phone-tablet {
+            max-width: abs.toRem(270);
+        }
 
         img {
             width: 100%;
