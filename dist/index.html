@@ -35,15 +35,11 @@
 
     <link rel="stylesheet" href="./css/main.css" />
 
-    <style>
-      /* .row > * {
+    <!-- <style>
+      .card {
         border: 1px solid red;
       }
-
-      .row {
-        border: 3px solid pink;
-      } */
-    </style>
+    </style> -->
   </head>
   <body>
     <div class="backdrop"></div>
@@ -459,74 +455,106 @@
       </div>
 
       <div class="header__bot hide-mobile">
-        <div class="wrapper">
-          <div class="row header__bot-content">
-            <div class="col-lg-3 bg-primary header__bot-left">
-              <button
-                class="burger burger--secondary burger--desktop burger--anim"
-                id="desktop-burger"
-              >
-                <div class="burger__lines">
-                  <span class="burger__line burger__line--top"></span>
-                  <span class="burger__line burger__line--mid"></span>
-                  <span class="burger__line burger__line--bot"></span>
-                </div>
-                <span class="burger__desc">Categories</span>
-              </button>
-            </div>
-            <div class="col-lg-9 bg-dark header__bot-right d-flex ai-center">
-              <nav class="nav">
-                <ul class="nav__list d-flex ai-center">
-                  <li>
-                    <a
-                      href="#"
-                      class="nav__link underline--grow"
-                      aria-current="page"
-                      >Home</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="nav__link underline--grow">Shop</a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav__link underline--grow">About</a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav__link underline--grow">Contact us</a>
-                  </li>
-                </ul>
-              </nav>
+        <div class="header__bot-content">
+          <div class="wrapper">
+            <div class="row">
+              <div class="col-lg-3 bg-primary header__bot-left relative">
+                <button
+                  class="burger burger--secondary burger--desktop burger--lines-hidden burger--anim"
+                  id="desktop-burger"
+                >
+                  <div class="burger__lines">
+                    <span class="burger__line burger__line--top"></span>
+                    <span class="burger__line burger__line--mid"></span>
+                    <span class="burger__line burger__line--bot"></span>
+                  </div>
+                  <span class="burger__desc">Categories</span>
+                </button>
+                <nav class="categories categories--sticky">
+                  <ul>
+                    <li>
+                      <a href="#" class="categories__link header__link"
+                        >Women's</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="categories__link header__link"
+                        >Men's</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="categories__link header__link"
+                        >Shipping</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="categories__link header__link">FAQs</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-lg-9 bg-dark header__bot-right d-flex ai-center">
+                <nav class="nav">
+                  <ul class="nav__list d-flex ai-center">
+                    <li>
+                      <a
+                        href="#"
+                        class="nav__link underline--grow"
+                        aria-current="page"
+                        >Home</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="nav__link underline--grow">Shop</a>
+                    </li>
+                    <li>
+                      <a href="#" class="nav__link underline--grow">About</a>
+                    </li>
+                    <li>
+                      <a href="#" class="nav__link underline--grow"
+                        >Contact us</a
+                      >
+                    </li>
+                  </ul>
+                </nav>
+              </div>
             </div>
           </div>
-          <!-- Row end -->
-          <div class="row">
-            <div class="col-lg-3">
-              <nav class="categories">
-                <ul>
-                  <li>
-                    <a href="#" class="categories__link header__link"
-                      >Women's</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="categories__link header__link">Men's</a>
-                  </li>
-                  <li>
-                    <a href="#" class="categories__link header__link"
-                      >Shipping</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="categories__link header__link">FAQs</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="col-lg-9 d-flex jc-center ai-center">banner</div>
+        </div>
+        <!-- Row end -->
+      </div>
+    </header>
+
+    <section class="banner section">
+      <div class="wrapper">
+        <div class="row">
+          <div class="col-lg-3 hide-mobile">
+            <nav class="categories hide-when-sticky card">
+              <ul>
+                <li>
+                  <a href="#" class="categories__link header__link">Women's</a>
+                </li>
+                <li>
+                  <a href="#" class="categories__link header__link">Men's</a>
+                </li>
+                <li>
+                  <a href="#" class="categories__link header__link">Shipping</a>
+                </li>
+                <li>
+                  <a href="#" class="categories__link header__link">FAQs</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-sm-12 col-md-8 col-lg-6">
+            <div class="card">banner</div>
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-3">
+            <div class="card">side-banner</div>
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
     <section style="height: 100vh"></section>
     <section style="height: 100vh"></section>

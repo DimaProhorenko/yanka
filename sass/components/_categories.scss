@@ -6,6 +6,24 @@
     border: 1px solid abs.$clr-text2;
     border-top: none;
 
+    &--sticky {
+        display: none;
+    }
+
+    &.collapsed {
+        height: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+    }
+
+    &.sticked {
+        @include abs.absolute(bottom 0 left 0);
+        translate: 0 100%;
+        width: 100%;
+        display: block;
+    }
+
     li {
         &:not(:first-child) {
             margin-block-start: .25em;

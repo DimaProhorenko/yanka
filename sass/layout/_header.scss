@@ -41,7 +41,11 @@
 
     &__mobile {
         padding-block: 1em;
-        position: relative;
+
+        &.sticked {
+            @include abs.fixed(top 0 left 0);
+            width: 100%;
+        }
 
         &-form {
             @include abs.absolute(top 0 left 0);
@@ -94,17 +98,22 @@
         &-content {
 
             &.sticked {
+                width: 100%;
+
+                border-block-end: 1px solid abs.$clr-text2;
+
                 z-index: 100;
                 @include abs.fixed(top 0 left 50%);
                 translate: -50% 0;
-                width: 90%;
-                max-width: abs.$max-width;
+
                 transform-origin: top left;
                 animation: sticky-grow 100ms ease-in-out 1;
 
-                & > * {
-                    // background-color: abs.$clr-body-bg;
-                    // color: abs.$clr-text;
+
+                .header__bot-left,
+                .header__bot-right {
+                    background-color: abs.$clr-body-bg;
+                    color: abs.$clr-text;
                 }
             }
         }

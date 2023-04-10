@@ -29,7 +29,14 @@
 
         .burger__line {
             display: block;
-            line-height: 1;
+        }
+    }
+
+    &--lines-hidden {
+        padding-inline-start: 1em;
+        .burger__lines {
+            display: none;
+            margin: 0;
         }
     }
 

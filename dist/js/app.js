@@ -4,7 +4,6 @@ const closeMNBtn = document.querySelector('.mn__btn--close');
 const mobileMenu = document.querySelector('.mn');
 
 
-
 const backdrop = document.querySelector('.backdrop');
 
 const mobileSearchFormOpen = document.querySelector('.open-search');
@@ -20,6 +19,23 @@ const stickyHeader = document.querySelector('.header__bot');
 const stickyHeaderEl = document.querySelector('.header__bot-content')
 const stickyHeaderHeight = stickyHeaderEl.offsetHeight;
 const stickyHeaderOffset = stickyHeader.offsetTop;
+const categories = stickyHeader.querySelector('.categories--sticky');
+const categoriesToggler = stickyHeader.querySelector('#desktop-burger');
+const hideWhenSticky = document.querySelector('.hide-when-sticky');
+
+const mobileHeader = document.querySelector('.header__mobile');
+const mobileHeaderOffset = mobileHeader.offsetTop;
+const mobileHeaderHeight = mobileHeader.offsetHeight;
+
+const addUniqueClass = (el, ...className) => {
+    if (!el.classList.contains(...className)) {
+        el.classList.add(...className);
+    }
+}
+
+const removeClass = (el, ...className) => el.classList.remove(...className);
+
+const addClass = (el, ...className) => el.classList.add(...className);
 
 const showBackdrop = () => {
     backdrop.classList.add('active');
@@ -78,6 +94,33 @@ const showPrevPanelHandler = () => {
     
 }
 
+const toggleCategories = () => {
+    categories.classList.toggle('collapsed');
+}
+
+const desktopHeaderScrollHandler = (scroll) => {
+    if (scroll < stickyHeaderOffset) {
+        removeClass(stickyHeaderEl, 'sticked');
+        removeClass(desktopBurger, 'opened');
+        removeClass(categories, 'collapsed', 'sticked');
+        addClass(categoriesToggler, 'burger--secondary', 'burger--lines-hidden');
+        hideWhenSticky.style.display = 'block';
+    } else if (scroll >= stickyHeaderOffset + stickyHeaderHeight) {
+        addUniqueClass(stickyHeaderEl, 'sticked');
+        addUniqueClass(categories, 'collapsed', 'sticked');
+        removeClass(categoriesToggler, 'burger--secondary', 'burger--lines-hidden');
+        hideWhenSticky.style.display = 'none';
+    }
+}
+
+const mobileHeaderScrollHandler = (scroll) => {
+    if (scroll < mobileHeaderOffset) {
+        removeClass(mobileHeader, 'sticked');
+    } else if (scroll >= mobileHeaderOffset + mobileHeaderHeight) {
+        addUniqueClass(mobileHeader, 'sticked');
+    }
+}
+
 mobileBurger.addEventListener('click', () => {
     mobileBurger.classList.add('opened');
     mobileBurger.setAttribute('aria-expanded', true);
@@ -88,6 +131,7 @@ mobileBurger.addEventListener('click', () => {
 
 desktopBurger.addEventListener('click', () => {
     desktopBurger.classList.toggle('opened');
+    toggleCategories();
 })
 
 
@@ -115,17 +159,8 @@ mnBackBtn.addEventListener('click', showPrevPanelHandler);
 
 window.addEventListener('scroll', e => {
     const scroll = window.scrollY;
-    console.log(stickyHeaderHeight)
-    console.log(`scroll: ${scroll}`);
-    console.log(`offset: ${stickyHeaderOffset}`);
-    if (scroll < stickyHeaderOffset) {
-        console.log('remove');
-        stickyHeaderEl.classList.remove('sticked');
-    } else if (scroll >= stickyHeaderOffset + stickyHeaderHeight) {
-        if (!stickyHeaderEl.classList.contains('sticked')) {
-            stickyHeaderEl.classList.add('sticked');
-        }
-    }
+    desktopHeaderScrollHandler(scroll);
+    mobileHeaderScrollHandler(scroll);
 })
 
 
