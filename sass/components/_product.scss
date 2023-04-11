@@ -2,10 +2,14 @@
 
 .product {
 
-    &__item:hover {
-        .product__img--over {
-            opacity: 1;
-            visibility: visible;
+    &__item {
+        position: relative;
+
+        &:hover {
+            .product__img--over {
+                opacity: 1;
+                visibility: visible;
+            }
         }
     }
 
@@ -21,6 +25,19 @@
             opacity: 0;
             visibility: hidden;
             @include abs.transition(opacity);
+        }
+    }
+
+    &__hover-link {
+        opacity: 0;
+        display: block;
+        height: 0;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 2;
         }
     }
 
