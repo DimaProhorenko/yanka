@@ -1365,11 +1365,19 @@ button {
   opacity: 1;
 }
 
+.product__item:hover .product__img--over {
+  opacity: 1;
+  visibility: visible;
+}
 .product__images {
   position: relative;
 }
 .product__img--over {
-  display: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease-in-out;
 }
 .product__brand {
   display: block;
