@@ -26,6 +26,9 @@
         font-size: 1rem;
         font-weight: 300;
         margin-block-start: .5em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &__bottom {

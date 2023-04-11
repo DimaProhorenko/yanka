@@ -27,9 +27,16 @@
     @media (min-width: $breakpoint) { 
       @for $i from 1 through abs.$columns {
         $percent: calc($i/abs.$columns * 100%);
-        .col-#{$key}-#{$i} {
+        .col-#{$key}-#{$i},
+        .col-#{$i} {
           flex: 0 0 $percent;
           max-width: $percent;
+        }
+        @if (#{$key} == 'lg' and #{$breakpoint} == '1024px' and #{$i} == '2') {
+            .col-lg-25 {
+                flex: 0 0 20%;
+                max-width: 20%;
+            }
         }
       }
     }
