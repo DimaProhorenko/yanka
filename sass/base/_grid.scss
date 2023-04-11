@@ -22,13 +22,20 @@
     width: auto;
 }
 
+@for $i from 1 through abs.$columns {
+    $percent: calc($i / abs.$columns * 100%);
+    .col-#{$i} {
+        flex: 0 0 auto;
+        width: #{$percent};
+    }
+}
+
 // Generate cols
 @each $key, $breakpoint in abs.$media-breakpoints {
     @media (min-width: $breakpoint) { 
       @for $i from 1 through abs.$columns {
         $percent: calc($i/abs.$columns * 100%);
-        .col-#{$key}-#{$i},
-        .col-#{$i} {
+        .col-#{$key}-#{$i} {
           flex: 0 0 $percent;
           max-width: $percent;
         }

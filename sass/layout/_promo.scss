@@ -1,0 +1,43 @@
+@use '../abstracts/' as abs;
+
+.promo {
+
+    &__item {
+        position: relative;
+    }
+
+    &__big {
+        @media screen and (min-width: abs.$xs) {
+            order: 2;
+        }
+        @media screen and (min-width: abs.$md) {
+            order: 0;
+        }
+    }
+
+    &__img {
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, .3);
+            z-index: 2;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__link {
+        @include abs.flex-center;
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+
+        color: abs.$clr-text3;
+
+    }
+}

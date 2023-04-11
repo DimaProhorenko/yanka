@@ -49,7 +49,8 @@ a[aria-current=page] {
 }
 
 /* A elements that don't have a class get default styles */
-a:not([class]) {
+a:not([class]),
+a.hover-underline {
   text-decoration-skip-ink: auto;
 
   &:hover {
